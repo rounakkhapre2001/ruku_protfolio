@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "ImpactLocal";
+  src: url("./assets/impact.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CenturyGothicLocal";
+  src: url("./assets/gothic.ttf") format("truetype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #080909;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #080909;
+  color: #f4f2ec;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+nav a.active {
+  color: #f4f2ec;
+}
+
+.display-text {
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: -0.0em;
+  max-width: 100%;
+  overflow-wrap: normal;
+  transform: scaleX(0.54);
+  transform-origin: center;
+  text-shadow: 1px 0 0 #f4f2ec;
+  white-space: nowrap;
+}
+
+.logo {
+  transform: scaleX(0.42);
+  transform-origin: center;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.section-title {
+  transform-origin: left center;
+  letter-spacing: -0.0em;
+}
+
+.hero-title {
+  letter-spacing: -0.0em;
+}
+
+.contact-title {
+  letter-spacing: -0.0em;
+}
+
+.page-title {
+  letter-spacing: -0.0em;
+}
+
+.sparkles {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-shadow: 0 0 8px rgba(247, 189, 21, 0.45);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  min-width: 0;
+}
+
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "+";
+  float: right;
+  color: #f7bd15;
+}
+
+details[open] summary::after {
+  content: "-";
+}
+
+.marquee-track {
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-title,
+  .contact-title {
+    font-size: clamp(92px, 25vw, 230px) !important;
+  }
+
+  .page-title {
+    font-size: clamp(74px, 20vw, 150px) !important;
+  }
+
+  .section-title {
+    font-size: clamp(50px, 12vw, 96px) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .nav-link {
+    white-space: nowrap;
+  }
+
+  .hero-portrait {
+    left: 22px !important;
+    top: 86px !important;
+    height: 210px !important;
+    width: 160px !important;
+  }
+
+  section {
+    min-height: auto !important;
+  }
+
+  .hero-title {
+    padding-top: 70px;
+  }
+
+  .display-text {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    transform: scaleX(0.72);
+    transform-origin: left center;
+    white-space: normal;
+    width: 100%;
+  }
+
+  .logo {
+    display: block;
+    transform: scaleX(0.42);
+    transform-origin: center;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .contact-title {
+    text-align: left;
+  }
+
+  .section-title {
+    line-height: 0.9;
+  }
+}
